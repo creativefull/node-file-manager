@@ -14,7 +14,8 @@ var router = new koaRouter();
 var render = views(path.join(__dirname, './views'), {map: {html: 'ejs'}});
 
 router.get('/', function *() {
-  this.redirect('files');
+  // this.redirect('files');
+  this.body = yield render('files')
 });
 
 router.get('/files', function *() {
