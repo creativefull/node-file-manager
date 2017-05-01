@@ -67,5 +67,6 @@ var IndexRouter = require('./routes');
 app.use(mount('/', IndexRouter));
 app.use(koaStatic(path.join(__dirname,'./public/')));
 
-startServer(app, +argv.port);
+var port = process.env.PORT || argv.port
+startServer(app, +port);
 
